@@ -7,8 +7,38 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
+  
+
+<nav class='navbar navbar-inverse navbar-fixed-top'>
+  <div class='container'>
+    <ul class='nav nav-pills navbar-left'>
+      <li> <%= link_to 'Home', root_path %> </li>
+    </ul>
+
+    <div class='navbar-text navbar-right'>
+      <% if current_user %>
+        Signed in as <%= current_user.email %> | 
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path %> | 
+        <%= link_to "Sign Up", new_user_registration_path %>
+      <% end %>
+    </div>
+
+  </div>
+</nav>
+
+<% if flash[:notice] or flash[:alert] %>
+  <% if flash[:notice] %>
+    <p class='flash notice'>
+      <%= flash[:notice] %>
+    </p>
+  <% else %>
+    <p class='flash alert'>
+      <%= flash[:alert] %>
+    </p>
+  <% end %>
+<% end %>
 <%= yield %>
 
 </body>

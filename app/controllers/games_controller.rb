@@ -9,4 +9,14 @@ class GamesController < ApplicationController
 
   def create
     @game = Game.new
+    @game.users << current_user
+
+    if @game.valid?
+      @game.save
+      redirect_to user_path
+    else
+      flash[:alert] = "ERROR ERROR HELP AHHHHH"
+      render :new
+    end
+  end
 end

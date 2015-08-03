@@ -1,1 +1,8 @@
-haaaay
+<% @users.each do |user| %>
+  <div>
+    <%= user.email %>
+    <%= link_to 'Games' %>
+
+  </div>
+
+<% end %>

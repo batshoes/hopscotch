@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
   def index
-    @game = Game.all
+    @games = Game.all
   end
 
   def new 
@@ -8,15 +8,21 @@ class GamesController < ApplicationController
   end 
 
   def create
-    @game = Game.new
-    @game.users << current_user
-
+    @game = Game.new(game_params)
+    @game.user_id = current_user.id
     if @game.valid?
       @game.save
-      redirect_to user_path
+      redirect_to '/'
     else
       flash[:alert] = "ERROR ERROR HELP AHHHHH"
       render :new
     end
   end
+
+  private
+  def game_params
+      params.require(:game).permit(:title, :description, :rules, :category)
+    end
+
+
 end

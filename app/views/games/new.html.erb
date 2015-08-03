@@ -1,0 +1,26 @@
+<%= form_for @game do |g| %>
+  <%= g.text_field :title, :placeholder => "Title" %> 
+  <%= g.text_field :description, :placeholder => "Description" %>
+  <%= g.select(:category) do %>
+    <% ['TV', 'Movies', 'Sports', 'Cards', 'Other']. each do |c| -%>
+      <%= content_tag(:option, c) %>
+    <% end %>
+  <% end %>
+  
+
+  <%= form_for @game do |r| %>
+  <%= g.select(:category) do %>
+    <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
+      <%= content_tag(:option, c) %>
+    <% end %>
+  <% end %>
+    <%= r.text_field :rules, :placeholder => "Rules" %>
+    <%= r.submit :add %>
+  <% end %>
+
+
+
+<%= g.submit :submit %>
+<% end %>
+
+

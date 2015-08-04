@@ -1,1 +1,8 @@
-hey
+<h1> Show page for specific Users games</h1>
+ 
+  <% @games.each do |game| %>
+  <div>
+    <%= game.title %>
+    <%= game.description %>
+  </div>
+<% end %>

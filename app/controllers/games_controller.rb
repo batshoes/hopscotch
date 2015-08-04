@@ -8,6 +8,10 @@ class GamesController < ApplicationController
     @game.rules << Rule.new
   end 
 
+  def show
+    @games = Game.where user_id: params[:id]
+  end
+
 
   def create
     @game = Game.new (game_params)
@@ -15,7 +19,7 @@ class GamesController < ApplicationController
 
     if @game.valid?
       @game.save
-      redirect_to user_path(current_user)
+      redirect_to games_path(current_user)
     else
       flash[:alert] = "ERROR ERROR HELP AHHHHH"
       render :new

@@ -15,8 +15,8 @@
   <% end %>
   </br>
   </br>
-  <div id = "new_rule">
-  <%= g.fields_for :rules do |builder| %>
+  <div class = "new_rule">
+  <%= g.fields_for :rule do |builder| %>
       <%= builder.select(:drink) do %>
         <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
           <%= content_tag(:option, c) %>

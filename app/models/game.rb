@@ -1,4 +1,5 @@
 class Game < ActiveRecord::Base
+<<<<<<< HEAD
 
   before_save :default_value
 
@@ -22,4 +23,6 @@ class Game < ActiveRecord::Base
   end
   
 
+=======
+>>>>>>> 0da15d5270aed5498b4c77ff788e4fec32d295c2
 end

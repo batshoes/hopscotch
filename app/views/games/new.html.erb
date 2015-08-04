@@ -1,4 +1,11 @@
 <%= form_for @game do |g| %>
+
+<% if @game.errors.any? %>
+    <% @game.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+
   <%= g.text_field :title, :placeholder => "Title" %> 
   <%= g.text_field :description, :placeholder => "Description" %>
   <%= g.select(:category) do %>
@@ -6,20 +13,22 @@
       <%= content_tag(:option, c) %>
     <% end %>
   <% end %>
-  
-
-  <%= form_for @game do |r| %>
-  <%= g.select(:category) do %>
-    <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
-      <%= content_tag(:option, c) %>
-    <% end %>
+  </br>
+  </br>
+  <div id = "new_rule">
+  <%= g.fields_for :rules do |builder| %>
+      <%= builder.select(:drink) do %>
+        <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
+          <%= content_tag(:option, c) %>
+        <% end %>
+      <% end %>
+      <%= builder.text_field :rules, :placeholder => "Rules" %>
+      <%= builder.submit :add %> </br>
+      <%= builder.hidden_field :_destroy %>
+      <%= link_to "remove", "#", class: "remove_fields" %>
   <% end %>
-    <%= r.text_field :rules, :placeholder => "Rules" %>
-    <%= r.submit :add %>
-  <% end %>
-
-
-
+</div>
+</br>
 <%= g.submit :submit %>
 <% end %>
 

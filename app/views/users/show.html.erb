@@ -2,5 +2,5 @@
 <h1> Show page for specific user </h1>
   <div>
     <%= @user.email %>
-    <%= link_to 'Games' %>
+    <%= link_to 'Games', game_path(@user.id) %>
   </div>

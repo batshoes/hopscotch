@@ -3,6 +3,6 @@
 <% @users.each do |user| %>
   <div>
     <%= user.username || user.email %>
-    <%= link_to 'Games' %>
+    <%= link_to 'Games', game_path(user.id) %>
   </div>
 <% end %>

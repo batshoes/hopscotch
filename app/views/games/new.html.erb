@@ -1,0 +1,35 @@
+<%= form_for @game do |g| %>
+
+<% if @game.errors.any? %>
+    <% @game.errors.full_messages.each do |msg| %>
+      <p><%= msg %></p>
+    <% end %>
+  <% end %>
+
+  <%= g.text_field :title, :placeholder => "Title" %> 
+  <%= g.text_field :description, :placeholder => "Description" %>
+  <%= g.select(:category) do %>
+    <% ['TV', 'Movies', 'Sports', 'Cards', 'Other']. each do |c| -%>
+      <%= content_tag(:option, c) %>
+    <% end %>
+  <% end %>
+  </br>
+  </br>
+  <div class = "new_rule">
+  <%= g.fields_for :rules do |builder| %>
+      <%= builder.select(:drink) do %>
+        <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
+          <%= content_tag(:option, c) %>
+        <% end %>
+      <% end %>
+      <%= builder.text_field :rules, :placeholder => "Rules" %>
+      <%= builder.submit :add %> </br>
+      <%= builder.hidden_field :_destroy %>
+      <%= link_to "remove", "#", class: "remove_fields" %>
+  <% end %>
+</div>
+</br>
+<%= g.submit :submit %>
+<% end %>
+
+

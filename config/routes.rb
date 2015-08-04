@@ -1,10 +1,6 @@
 
 Rails.application.routes.draw do
   resources :games
-<<<<<<< HEAD
-=======
-
->>>>>>> 0da15d5270aed5498b4c77ff788e4fec32d295c2
   devise_for :users
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.

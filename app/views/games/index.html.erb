@@ -1,8 +1,10 @@
 <% @games.each do |game| %>
   <p><%= game.title %></p>
   <p><%= game.description %></p>
-  <p><%= link_to "#{game.user.username}", user_path(game.user.id)  %></p>
-  <br><br>
+    <% game.rules.each do |rule| %>
+      <p><%= rule.rules %></p>
+    <% end %> 
+  <br>
 <% end %>
 
 

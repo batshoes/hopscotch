@@ -10,12 +10,12 @@ class GamesController < ApplicationController
 
 
   def create
-    @game = Game.new
-    @game.users << current_user
+    @game = Game.new (game_params)
+    @game.user_id = current_user.id
 
     if @game.valid?
       @game.save
-      redirect_to user_path
+      redirect_to user_path(current_user)
     else
       flash[:alert] = "ERROR ERROR HELP AHHHHH"
       render :new

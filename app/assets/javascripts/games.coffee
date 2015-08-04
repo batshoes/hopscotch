@@ -7,6 +7,7 @@ current_index = 1
 addRule = ->
   current_index += 1
   html = """
+    <div id="shit">
       <select name="game[rules_attributes][#{current_index}][drink]" id="game_rules_attributes_#{current_index}_drink">
           <option>Full Beer</option>
           <option>Half Beer</option>
@@ -18,6 +19,7 @@ addRule = ->
       <input type="hidden" value="false" name="game[rules_attributes][#{current_index}][_destroy]" id="game_rules_attributes_#{current_index}__destroy">
       <a class="remove_fields" href="#">remove</a>
       </br>
+    </div>
   """
   $("#new_rule input[type='submit']").before(html)
   
@@ -25,3 +27,12 @@ addRule = ->
 $ ->
 
   $('#add-rule').on('click', addRule)
+
+
+  $('form').on 'click', '.remove_fields', (event) ->
+    $(this).prev('input[type=hidden]').val('1')
+    $(this).closest('#shit').hide()
+    event.preventDefault()
+
+
+  

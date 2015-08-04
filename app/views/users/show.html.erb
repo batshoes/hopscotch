@@ -1,6 +1,8 @@
 
 <h1> Show page for specific user </h1>
   <div>
-    <%= @user.email %>
-    <%= link_to 'Games', game_path(@user.id) %>
+  <p>Email: <%= @user.email %></p>
+  <p>Upvotes: <%= @user.upvotes %></p>
+  <p><%= link_to 'Games', game_path(@user.id) %></p>
+
   </div>

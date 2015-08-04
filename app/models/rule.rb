@@ -1,5 +1,5 @@
 class Rule < ActiveRecord::Base
   belongs_to :game
 
-  validates_presence_of :category, :rule 
+  validates_presence_of :drink, :rules 
 end

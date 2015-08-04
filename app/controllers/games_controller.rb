@@ -14,9 +14,9 @@ class GamesController < ApplicationController
 
 
   def create
-    @game = Game.new (game_params)
+    @game = Game.new(game_params)
     @game.user_id = current_user.id
-
+    # binding.pry
     if @game.valid?
       @game.save
       redirect_to games_path(current_user)
@@ -29,7 +29,7 @@ class GamesController < ApplicationController
 
   private
   def game_params
-      params.require(:game).permit(:title, :description, :rules, :category)
+      params.require(:game).permit(:title, :description, :category, :rules_attributes => [:drink, :rules])
     end
 
 end

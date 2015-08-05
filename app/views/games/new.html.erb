@@ -15,24 +15,21 @@
   <% end %>
   </br>
   </br>
-  <div class = "new_rule">
+  <div id = "new_rule">
   <%= g.fields_for :rules do |builder| %>
       <%= builder.select(:drink) do %>
         <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
           <%= content_tag(:option, c) %>
         <% end %>
       <% end %>
-      <%= builder.text_field :rules, :placeholder => "Rules" %>
-      <%= builder.submit :add %> </br>
+      <%= builder.text_field :rules, :placeholder => "Rules" %></br>
       <%= builder.hidden_field :_destroy %>
       <%= link_to "remove", "#", class: "remove_fields" %>
   <% end %>
+  <%= g.submit :submit %>
+  
 </div>
-
-</br>
-<%= g.submit :submit %>
-
-<button id="add-rule">Add Rule</button>
 <% end %>
 
 
+<button id="add-rule">Add Rule</button>

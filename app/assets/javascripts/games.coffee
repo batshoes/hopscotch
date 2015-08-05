@@ -4,8 +4,11 @@
 
 current_index = 1
 
-addRule = -> 
+
+addRule = ->
+  current_index += 1
   html = """
+    <div id="adding_rule">
       <select name="game[rules_attributes][#{current_index}][drink]" id="game_rules_attributes_#{current_index}_drink">
           <option>Full Beer</option>
           <option>Half Beer</option>
@@ -13,14 +16,23 @@ addRule = ->
           <option>SHOTZ</option>
       </select>      
       <input placeholder="Rules" type="text" name="game[rules_attributes][#{current_index}][rules]" id="game_rules_attributes_#{current_index}_rules">
-      <input type="submit" name="commit" value="add"> <br>
+      
       <input type="hidden" value="false" name="game[rules_attributes][#{current_index}][_destroy]" id="game_rules_attributes_#{current_index}__destroy">
       <a class="remove_fields" href="#">remove</a>
-   $('#new_rule')
+      </br>
+    </div>
   """
-  $('#new_rule input[type=submit]').before(html)
-  current_index += 1
+  $("#new_rule input[type='submit']").before(html)
+  
 
 $ ->
 
-  $('#new-rule').on('click', addRule)
+  $('#add-rule').on('click', addRule)
+
+
+  $('form').on 'click', '.remove_fields', (event) ->
+    $(this).prev('input[type=hidden]').val('1')
+    $(this).closest('#adding_rule').hide()
+    event.preventDefault()
+
+

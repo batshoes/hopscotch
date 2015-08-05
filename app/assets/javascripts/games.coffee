@@ -4,6 +4,7 @@
 
 current_index = 1
 
+
 addRule = ->
   current_index += 1
   html = """
@@ -35,4 +36,3 @@ $ ->
     event.preventDefault()
 
 
-  

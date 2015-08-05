@@ -26,18 +26,18 @@ class GamesController < ApplicationController
   end
 
   def destroy
-    @game = Game.find game_params
+    @game = Game.find params[:id]
     @game.destroy
-    redirect_to game_path(current_user)
+    redirect_to games_path
   end
 
   def edit
-    @game = Game.find game_params
+    @game = Game.find params[:id]
   end
 
   def update
-    @game = Game.find game_params
-    @game.save
+    @game = Game.find params[:id]
+    @game.update! game_params
   end
 
 

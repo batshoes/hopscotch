@@ -37,7 +37,7 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find params[:id]
-    @game.update! game_params
+    GameUpdater.new(@game).update(game_params)
   end
 
 

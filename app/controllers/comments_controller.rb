@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     @comment = current_user.comments.new(comment_params)
 
     @comment.save
-    redirect_to game_path(current_user)
+    redirect_to game_path(comment_params.game_id)
   end
 
   private

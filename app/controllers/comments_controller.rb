@@ -4,12 +4,15 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = current_user.comments.create(comment_params)
+    @comment = current_user.comments.new(comment_params)
+
+    @comment.save
+    redirect_to game_path(current_user)
   end
 
   private
     def comment_params
-      params.require(:comment).permit(:body, :game_id, :user_id)
+      params.require(:comment).permit(:id, :body, :game_id, :user_id)
     end
 
 end

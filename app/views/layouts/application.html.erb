@@ -7,8 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div id="body">
   
-
 <nav class='navbar navbar-inverse navbar-fixed-top'>
   <div class='container'>
     <ul class='nav nav-pills navbar-left'>
@@ -31,6 +31,10 @@
 
   </div>
 </nav>
+<div id="title">
+    <h2>Welcome To</h2>
+    <h1>Hopscotch</h1>
+  </div>
 
 <% if flash[:notice] or flash[:alert] %>
   <% if flash[:notice] %>
@@ -44,6 +48,6 @@
   <% end %>
 <% end %>
 <%= yield %>
-
+</div>
 </body>
 </html>

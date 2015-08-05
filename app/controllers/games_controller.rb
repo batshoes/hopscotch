@@ -25,6 +25,21 @@ class GamesController < ApplicationController
     end
   end
 
+  def destroy
+    @game = Game.find params[:id]
+    @game.destroy
+    redirect_to games_path
+  end
+
+  def edit
+    @game = Game.find params[:id]
+  end
+
+  def update
+    @game = Game.find params[:id]
+    @game.update! game_params
+  end
+
 
   private
   def game_params

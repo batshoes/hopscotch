@@ -7,7 +7,7 @@ current_index = 1
 addRule = ->
   current_index += 1
   html = """
-    <div id="adding_rule">
+    <div class="adding_rule">
       <select name="game[rules_attributes][#{current_index}][drink]" id="game_rules_attributes_#{current_index}_drink">
           <option>Full Beer</option>
           <option>Half Beer</option>
@@ -30,8 +30,7 @@ $ ->
 
 
   $('form').on 'click', '.remove_fields', (event) ->
-    $(this).prev('input[type=hidden]').val('1')
-    $(this).closest('#adding_rule').hide()
+    $(this).parent().remove()
     event.preventDefault()
 
 

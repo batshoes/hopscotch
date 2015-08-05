@@ -32,11 +32,12 @@ class GamesController < ApplicationController
   end
 
   def edit
-    @game = Game.find games_params
+    @game = Game.find game_params
   end
 
   def update
-    @game = Game.find games_params
+    @game = Game.find game_params
+    @game.save
   end
 
 

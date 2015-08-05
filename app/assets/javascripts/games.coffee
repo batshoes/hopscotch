@@ -28,7 +28,7 @@ $('form').on 'click', '.remove_fields', (event) ->
   $(this).parent().remove()
   event.preventDefault()
 
-$(document).on 'page:load', ->
+$(document).on 'ready page:load', ->
 
   $('#add-rule').on('click', addRule)
 

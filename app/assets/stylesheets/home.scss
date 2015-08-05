@@ -1,3 +1,100 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
+
+ body { 
+  background: url("beer.gif") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+ }
+#body {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0,0,0,.3);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+nav {
+  color: white;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+#title {
+  color: white;
+  text-align: center;
+  font-family: 'Arvo', serif;
+}
+h2 {
+  font-size: 70px;
+}
+h1 {
+  font-size: 150px;
+}
+span {
+  color: gold;
+}
+/* Main styles */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:800);
+
+.box-with-text {
+  background-image: -webkit-linear-gradient(white 50%, gold 50%);
+  // background-repeat: repeat;
+  // background-position: 0 0;
+  // background-size: 100% 50px;
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  // -webkit-animation: stripes 20s linear infinite;
+  // animation: stripes 20s linear infinite;
+}
+
+@-webkit-keyframes stripes {
+  100% {
+    background-position: 0 -50px;
+  }
+}
+
+@keyframes stripes {
+  100% {
+    background-position: 0 -50px;
+  }
+}
+
+
+.box-with-text {
+  position: relative;
+  left: 60%;
+  // top: 200px;
+  bottom: 120px;
+  // white-space: nowrap;
+  // text-align: center;
+  // text-transform: uppercase;
+  font: bold 26vmax/.8 Open Sans, Impact;
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  -ms-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+h3 {
+  font-size: 25px;
+  // display: inline-block;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

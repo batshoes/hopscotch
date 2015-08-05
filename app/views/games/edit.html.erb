@@ -25,7 +25,7 @@
         <% end %>
         <%= builder.text_field :rules, :placeholder => "Rules" %></br>
         <%= builder.hidden_field :_destroy %>
-        <%= link_to "remove", "#", class: "remove_fields" %>
+        <%= link_to "remove", edit_game_path(params[:id]), method: :delete %>
     </div>
   <% end %>
   <%= g.submit :submit %>

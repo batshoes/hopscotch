@@ -24,15 +24,17 @@ addRule = ->
   $("#new_rule input[type='submit']").before(html)
   
 
-
 $(document).on 'ready page:load', ->
 
   $('#add-rule').on('click', addRule)
 
   $('form').on 'click', '.remove_fields', (event) ->
-    $(this).prev('input[type=hidden]').val('1')
-    $(this).closest('#adding_rule').hide()
+
+    $(this).parent().remove()
     event.preventDefault()
+    event.preventDefault()
+
+  
 
 
 # $(document).ready(ready)

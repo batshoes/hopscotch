@@ -4,5 +4,21 @@
   <div>
     <p><%= game.title %>, </p>
     <%= game.description %>
+    <% game.comments.order(id: :desc).each do |comment| %>
+      <%= simple_format h(comment.body) %>
+       Posted by <%= link_to comment.user.username, user_path(comment.user.id) %>
+    <% end %>
   </div>
+
+<div class="comments">
+  
+  <h4>Leave a Comment</h4>
+
+  <%= form_for Comment.new do |f| %>
+      <%= f.text_area :body, id: 'comment_form' %>
+      <%= f.hidden_field :game_id, value: game.id %>
+      <%= f.submit :submit %>
+  <% end %>
+
+</div>
 <% end %>

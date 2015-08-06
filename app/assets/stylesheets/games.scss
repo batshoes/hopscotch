@@ -7,33 +7,59 @@
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC);
 @import url(http://fonts.googleapis.com/css?family=Lato:100);
 
+
+body {
+  // min-width: 1200px;
+}
 .new_gamezz {
-    background: url("hopscotch.jpg") no-repeat center center;
+    background: url("hopscotch-12_copy.jpg") no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
     height: 100%;
+    // min-width: 1200px;
+    // width: 100%;
 }
+.new_game {
+  // padding: 20px;
+  // height: 200px;
+  // margin-top: 170px;
+  // margin-right: 10px;
+  margin-left: 10px;
+  height: 220px;
+  overflow-y: scroll;
+   -webkit-transform: rotate(00deg);
+  -moz-transform: rotate(00deg); 
 
+}
+.clear {
+  height: 50px;
+}
 .new_gamez {
-  text-align: center;
-  padding: 10px;
-  margin: 0 auto;
-  padding: 20px;
-  border-radius: 10px;
+  background: url("napkin.jpg") no-repeat center center;
+  // background-size: cover;
+  // padding: 10px;
+  // margin: 0 auto;
+  
+  border-radius: 0px;
   -webkit-transform: rotate(20deg);
   -moz-transform: rotate(20deg); 
-  position: absolute;
-  top: 260px;
-  left: 680px;
+  position: relative;
+  top: 150px;
+  // left: 680px;
   padding-top: 0;
   font-family:'Amatic SC', Helvetica, Sans-serif;
   font-size: 25px;
   font-weight: bold;
-  overflow-y: scroll;
-  width: 275px;
-  height: 200px;
+  margin: auto;
+  // margin-top: 300px;
+  margin-right: 290px;
+  width: 300px;
+  height: 350px;
   text-align: left;
-  margin-left: 20px;
+  // margin-left: 20px;
+  // margin-top: 10px;
+  padding-top: 80px;
+  padding-bottom: 0;
 
 
 }

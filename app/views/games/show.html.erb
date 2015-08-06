@@ -4,6 +4,11 @@
   <div>
     <p><%= game.title %>, </p>
     <%= game.description %>
+    <% if current_user.id == game.user_id  %>
+      <%= link_to "Delete", game_path(game.id), method: :delete %> 
+      <%= link_to 'Edit', edit_game_path(game.id) %> 
+    <% end %>
+    <h2>Comments</h2>
     <% game.comments.order(id: :desc).each do |comment| %>
       <%= simple_format h(comment.body) %>
        Posted by <%= link_to comment.user.username, user_path(comment.user.id) %>
@@ -12,7 +17,7 @@
 
 <div class="comments">
   
-  <h4>Leave a Comment</h4>
+  <h2>Leave a Comment</h2>
 
   <%= form_for Comment.new do |f| %>
       <%= f.text_area :body, id: 'comment_form' %>

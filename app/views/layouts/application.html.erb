@@ -7,28 +7,6 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  
-
-<nav class='navbar navbar-inverse navbar-fixed-top'>
-  <div class='container'>
-    <div class='navbar-text navbar-right'>
-      <% if current_user %>
-        Signed in as <%= current_user.email %> | 
-        <%= link_to 'Home', root_path %>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-        <%= link_to "My Games", user_games_path(current_user) %>
-        <%= link_to "All Users", users_path  %>
-        <%= link_to "All Games", games_path  %>
-        <%= link_to "New Game", new_game_path  %>
-        <%= link_to "Edit Profile", edit_user_path(current_user) %>
-      <% else %>
-        <%= link_to "Login", new_user_session_path %> | 
-        <%= link_to "Sign Up", new_user_registration_path %>
-      <% end %>
-    </div>
-
-  </div>
-</nav>
 
 <% if flash[:notice] or flash[:alert] %>
   <% if flash[:notice] %>
@@ -41,7 +19,7 @@
     </p>
   <% end %>
 <% end %>
+
 <%= yield %>
 
-</body>
 </html>

@@ -1,6 +1,6 @@
-
-
-<%= form_tag games_path, method: :get do  %>
+<div class="games_index_back">
+  
+  <%= form_tag games_path, method: :get do  %>
 <%= select_tag "answer", options_for_select(['TV', 'Movies', 'Sports', 'Cards', 'Other', 'All'], "All") %>
 <%= submit_tag :select  %>
 <% end %>
@@ -18,3 +18,5 @@
   <% end %>
 
 <% end %>
+  
+</div>

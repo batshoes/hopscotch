@@ -44,7 +44,6 @@ class GamesController < ApplicationController
   def update
     @game = Game.find params[:id]
     GameUpdater.new(@game).update(game_params)
-
     redirect_to game_path(@game.id)
   end
 

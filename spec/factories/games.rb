@@ -11,5 +11,7 @@ FactoryGirl.define do
     after(:build) do |game, evaluator|
       game.rules << build(:rule)
     end
+
+      
   end
 end

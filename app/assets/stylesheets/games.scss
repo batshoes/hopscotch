@@ -1,3 +1,193 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC);
+@import url(http://fonts.googleapis.com/css?family=Lato:100);
+
+
+body {
+  // min-width: 1200px;
+}
+.new_gamezz {
+    background: url("hopscotch-12_copy.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+    // min-width: 1200px;
+    // width: 100%;
+}
+.new_game {
+  // padding: 20px;
+  // height: 200px;
+  // margin-top: 170px;
+  // margin-right: 10px;
+  margin-left: 10px;
+  height: 220px;
+  overflow-y: scroll;
+   -webkit-transform: rotate(00deg);
+  -moz-transform: rotate(00deg); 
+
+}
+.clear {
+  height: 50px;
+}
+.new_gamez {
+  background: url("napkin.jpg") no-repeat center center;
+  // background-size: cover;
+  // padding: 10px;
+  // margin: 0 auto;
+  
+  border-radius: 0px;
+  -webkit-transform: rotate(20deg);
+  -moz-transform: rotate(20deg); 
+  position: relative;
+  top: 150px;
+  // left: 680px;
+  padding-top: 0;
+  font-family:'Amatic SC', Helvetica, Sans-serif;
+  font-size: 25px;
+  font-weight: bold;
+  margin: auto;
+  // margin-top: 300px;
+  margin-right: 290px;
+  width: 300px;
+  height: 350px;
+  text-align: left;
+  // margin-left: 20px;
+  // margin-top: 10px;
+  padding-top: 80px;
+  padding-bottom: 0;
+
+
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    left: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+.new_gamez input[type="text"] {
+  background-color: transparent;
+  outline: none;
+  border: transparent;
+  border-bottom: 2px dotted black;
+  font-size: 14px;
+}
+.new_gamez input[type="submit"]{
+  background-color: grey;
+  width: 70px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 3px;
+  display: inline;
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  font-size: 25px;
+  font-family:'Amatic SC', Helvetica, Sans-serif;
+  font-weight: bold;
+}
+
+.new_gamez input[type="submit"]:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+.new_gamez select {
+  border: thin solid black;
+  outline: none;
+  font-family:'Amatic SC', Helvetica, Sans-serif;
+  background-color: transparent;
+  bottom: 3px;
+  position: relative;
+  font-weight: bold;
+  font-size: 17px;
+}
+.new_gamez a {
+  text-decoration: none;
+  background-color: grey;
+  padding: 0px 5px;
+  color: black;
+  border-radius: 3px;
+  font-family:'Amatic SC', Helvetica, Sans-serif;
+  font-weight: 100;
+}
+.new_game a:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+#buttons {
+  text-align: center;
+  padding-right: 10px;
+  position: relative;
+  bottom: 10px;
+}
+#add_rule {
+  background-color: grey;
+  width: 80px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 3px;
+  display: inline;
+  margin-top: 5px;
+
+}
+#add_rule:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.adding_rule {
+  margin-bottom: 20px;
+  text-align: left;
+  margin-top: 5px;
+
+}
+
+.all_games {
+  font-family: 'Amatic SC', cursive;
+  background-color: white;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.games_index_back {
+  background-color: pink;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+}
+.all_games h2 {
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.all_games h3 {
+  margin-top: 0;
+}
+.all_games span {
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

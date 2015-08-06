@@ -8,7 +8,10 @@ class GameUpdater
 
     def update(game_params)
       @game_params = game_params
+      
       delete_removed_rules
+      # @game.update game_params
+
 
       game_params[:rules_attributes].each do |_, r|
       id = r.delete(:id)
@@ -19,7 +22,10 @@ class GameUpdater
         rule.update(r)
       end
     end
-
+    @game.title = game_params[:title]
+    @game.description = game_params[:description]
+    @game.save
+    binding.pry
     game
   end
 
@@ -27,11 +33,11 @@ class GameUpdater
 
   def delete_removed_rules
     game_rule_ids = game.rules.pluck :id
-
+    puts game_params.inspect
     submitted_rule_ids = game_params[:rules_attributes].map do |_, r|
       r[:id].to_i
     end.compact
-
+   
     delete_game_ids = game_rule_ids - submitted_rule_ids
     game.rules.where(id: delete_game_ids).destroy_all
     game.reload

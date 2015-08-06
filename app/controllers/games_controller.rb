@@ -1,3 +1,4 @@
+
 class GamesController < ApplicationController
   def index
     @games = Game.all
@@ -38,6 +39,7 @@ class GamesController < ApplicationController
   def update
     @game = Game.find params[:id]
     GameUpdater.new(@game).update(game_params)
+    redirect_to root_path
   end
 
 

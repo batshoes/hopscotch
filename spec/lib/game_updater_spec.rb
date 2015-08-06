@@ -2,6 +2,7 @@ require 'rails_helper'
 
 describe GameUpdater do
   let!(:game) { create(:game) }
+  let!(:rule) { create(:rule)}
 
   let!(:game_params) {
     { id: game.id,
@@ -10,10 +11,8 @@ describe GameUpdater do
         description: 'Wow',
         rules_attributes: {
           '0' => {
-            id: game.rules.first.id,
             rules: 'Rule1',
             drink: 'Beer'
-
             },
           '1' => {
             rules: 'Rule2',

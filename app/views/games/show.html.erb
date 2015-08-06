@@ -1,5 +1,6 @@
 <div> 
   <%= (@game.title).titleize %>
+  <%= @game.category %>
   <%= simple_format h(@game.description) %>
   created by <%= @game.user.username %>
   <br>

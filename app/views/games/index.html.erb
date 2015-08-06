@@ -1,11 +1,20 @@
-<% @games.each do |game| %>
-  <h2><%= link_to game.title, game_path(game.id) %></h2>
-  <h4>Description:</h4>
-  <h3><%= game.description %></h3>
-    
-    <% if current_user.id == game.user_id  %>
-      <%= link_to "Delete", game_path(game.id), method: :delete %> 
-      <%= link_to 'Edit', edit_game_path(game.id) %> 
+
+
+<%= form_tag games_path, method: :get do  %>
+<%= select_tag "answer", options_for_select(['TV', 'Movies', 'Sports', 'Cards', 'Other', 'All'], "All") %>
+<%= submit_tag :select  %>
+<% end %>
+
+<% if @answer == "All" %>
+  <% @games.each do |game| %>
+      <%= render 'game', :game => game %>
+  <% end %>
+<% else %>
+
+  <% @games.each do |game| %>
+    <%if game.category == @answer  %>
+      <%= render 'game', :game => game %>
     <% end %>
-  <br><br>
+  <% end %>
+
 <% end %>

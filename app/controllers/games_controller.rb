@@ -5,6 +5,7 @@ class GamesController < ApplicationController
       @games = User.find(params[:user_id]).games
     else
       @games = Game.all
+      @answer = params['answer']
     end
   end
 
@@ -15,7 +16,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find params[:id]
-    @games = Game.where user_id: params[:id]
+    # @games = Game.where user_id: params[:id]
   end
 
   def create
@@ -23,7 +24,7 @@ class GamesController < ApplicationController
     @game.user_id = current_user.id
     if @game.valid?
       @game.save
-      redirect_to game_path(current_user)
+      redirect_to user_games_path(current_user)
     else
       flash[:alert] = "ERROR ERROR HELP AHHHHH"
       render :new
@@ -44,7 +45,7 @@ class GamesController < ApplicationController
     @game = Game.find params[:id]
     GameUpdater.new(@game).update(game_params)
 
-    redirect_to games_path(@game.id)
+    redirect_to game_path(@game.id)
   end
 
 

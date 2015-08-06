@@ -11,13 +11,10 @@
 
 <nav class='navbar navbar-inverse navbar-fixed-top'>
   <div class='container'>
-    <ul class='nav nav-pills navbar-left'>
-      <li> <%= link_to 'Home', root_path %> </li>
-    </ul>
-
     <div class='navbar-text navbar-right'>
       <% if current_user %>
         Signed in as <%= current_user.email %> | 
+        <%= link_to 'Home', root_path %>
         <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <%= link_to "My Games", game_path(current_user)  %>
         <%= link_to "All Users", users_path  %>

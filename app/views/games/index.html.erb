@@ -1,22 +1,24 @@
 <div class="games_index_back">
   
   <%= form_tag games_path, method: :get do  %>
-<%= select_tag "answer", options_for_select(['TV', 'Movies', 'Sports', 'Cards', 'Other', 'All'], "All") %>
-<%= submit_tag :select  %>
-<% end %>
-
-<% if @answer == "All" %>
-  <% @games.each do |game| %>
-      <%= render 'game', :game => game %>
+    <%= select_tag "answer", options_for_select(['TV', 'Movies', 'Sports', 'Cards', 'Other', 'All'], "All") %>
+    <%= submit_tag :select  %>
   <% end %>
-<% else %>
 
-  <% @games.each do |game| %>
-    <%if game.category == @answer  %>
-      <%= render 'game', :game => game %>
+
+  <% if @answer == "All" || @answer.nil?%>
+    <% @games.each do |game| %>
+        <%= render 'game', :game => game %>
     <% end %>
+  <% else %>
+    <% @games.each do |game| %>
+      <%if game.category == @answer  %>
+        <%= render 'game', :game => game %>
+      <% end %>
+    <% end %>
+ 
   <% end %>
 
-<% end %>
+
   
 </div>

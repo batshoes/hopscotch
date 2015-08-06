@@ -1,30 +1,37 @@
-<h1> Show page for specific Users games</h1>
- 
-  <% @games.each do |game| %>
-  <div>
-    <p><%= game.title %>, </p>
-    <%= game.description %>
-    <% if current_user.id == game.user_id  %>
-      <%= link_to "Delete", game_path(game.id), method: :delete %> 
-      <%= link_to 'Edit', edit_game_path(game.id) %> 
-    <% end %>
-    <h2>Comments</h2>
-    <% game.comments.order(id: :desc).each do |comment| %>
+<div> 
+  <%= (@game.title).titleize %>
+  <%= simple_format h(@game.description) %>
+  created by <%= @game.user.username %>
+  <br>
+  <% @game.rules.each do |rule| %>
+    <span><%= rule.rules %></span>
+    <span> - </span>
+    <span><%= rule.drink %></span>
+    <br>
+  <% end %> 
+  <% if current_user.id == @game.user_id  %>
+      <%= link_to "Delete", game_path(@game.id), method: :delete %> 
+      <%= link_to 'Edit', edit_game_path(@game.id) %> 
+  <% end %>
+</div>
+
+<div>
+  <h2>Comments</h2>
+    <% @game.comments.order(id: :desc).each do |comment| %>
       <%= simple_format h(comment.body) %>
        Posted by <%= link_to comment.user.username, user_path(comment.user.id) %>
+       <br>
+       at <%= comment.created_at.to_s(:short) %>
     <% end %>
-  </div>
+</div>
 
-<div class="comments">
-  
+<div>
   <h2>Leave a Comment</h2>
 
   <%= form_for Comment.new do |f| %>
-      <%= f.text_area :body, id: 'comment_form' %>
-      <%= f.hidden_field :game_id, value: game.id %>
-      <%= f.submit :submit %>
+    <%= f.text_area :body, id: 'comment_form' %>
+    <%= f.hidden_field :game_id, value: @game.id %>
+    <%= f.submit :submit %>
   <% end %>
 
 </div>
-<% end %>
-

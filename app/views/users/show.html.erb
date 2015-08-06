@@ -6,3 +6,14 @@
   <p><%= link_to 'Games', game_path(@user.id) %></p>
 
   </div>
+
+  <% @user.games.each do |game| %>
+  <div>
+    <p><%= game.title %>, </p>
+    <%= game.description %>
+    <% if current_user.id == game.user_id  %>
+      <%= link_to "Delete", game_path(game.id), method: :delete %> 
+      <%= link_to 'Edit', edit_game_path(game.id) %> 
+    <% end %>
+   
+<% end %>

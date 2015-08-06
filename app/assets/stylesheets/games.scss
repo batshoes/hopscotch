@@ -5,7 +5,7 @@
 
 
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC);
-
+@import url(http://fonts.googleapis.com/css?family=Architects+Daughter);
 
 
 .new_gamezz {
@@ -25,16 +25,57 @@
   -webkit-transform: rotate(20deg);
   -moz-transform: rotate(20deg); 
   position: absolute;
-  top: 300px;
-  left: 500px;
+  top: 260px;
+  left: 680px;
   padding-top: 0;
+  font-family:'Amatic SC', Helvetica, Sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+  overflow-y: scroll;
+  width: 300px;
+  height: 200px;
+  text-align: left;
+  margin-left: 20px;
 
+
+}
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 .new_gamez input[type="text"] {
   background-color: transparent;
   outline: none;
   border: transparent;
   border-bottom: 2px dotted black;
+}
+.new_gamez input[type="submit"]{
+   background-color: grey;
+  width: 80px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 3px;
+  display: inline;
+  margin-top: 10px;
+  outline: none;
+  border: none;
+  font-size: 30px;
+  font-family:'Amatic SC', Helvetica, Sans-serif;
+  font-weight: bold;
+}
+.new_gamez select {
+  border: thin solid black;
+  outline: none;
+  font-family:'Amatic SC', Helvetica, Sans-serif;
+  background-color: transparent;
+  bottom: 5px;
+  position: relative;
 }
 #add_rule {
   background-color: grey;

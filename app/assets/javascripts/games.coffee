@@ -17,11 +17,11 @@ addRule = ->
       <input placeholder="Rules" type="text" name="game[rules_attributes][#{current_index}][rules]" id="game_rules_attributes_#{current_index}_rules">
       
       <input type="hidden" value="false" name="game[rules_attributes][#{current_index}][_destroy]" id="game_rules_attributes_#{current_index}__destroy">
-      <a class="remove_fields" href="#">remove</a>
+      <a class="remove_fields" href="#">X</a>
       </br>
     </div>
   """
-  $("#new_rule input[type='submit']").before(html)
+  $("#add_rule").before(html)
   
 
 $(document).on 'ready page:load', ->

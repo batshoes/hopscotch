@@ -1,3 +1,97 @@
 // Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Amatic+SC);
+
+
+
+.new_gamezz {
+    background: url("hopscotch.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+}
+
+.new_gamez {
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  -webkit-transform: rotate(20deg);
+  -moz-transform: rotate(20deg); 
+  position: absolute;
+  top: 300px;
+  left: 500px;
+  padding-top: 0;
+
+}
+.new_gamez input[type="text"] {
+  background-color: transparent;
+  outline: none;
+  border: transparent;
+  border-bottom: 2px dotted black;
+}
+#add_rule {
+  background-color: grey;
+  width: 80px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 3px;
+  display: inline;
+  margin-top: 10px;
+
+}
+#add_rule:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.adding_rule {
+  margin-bottom: 20px;
+}
+
+.all_games {
+  font-family: 'Amatic SC', cursive;
+  background-color: white;
+  width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.games_index_back {
+  background-color: pink;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: scroll;
+}
+.all_games h2 {
+  font-size: 60px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.all_games h3 {
+  margin-top: 0;
+}
+.all_games span {
+  font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+

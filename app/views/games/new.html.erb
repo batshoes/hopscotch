@@ -1,36 +1,46 @@
-<%= form_for @game do |g| %>
+<body class="new_gamezz">
+  <div class="new_gamez">
+    <%= form_for @game do |g| %>
 
-<% if @game.errors.any? %>
-    <% @game.errors.full_messages.each do |msg| %>
-      <p><%= msg %></p>
-    <% end %>
-  <% end %>
-
-  <%= g.text_field :title, :placeholder => "Title" %> 
-  <%= g.text_field :description, :placeholder => "Description" %>
-  <%= g.select(:category) do %>
-    <% ['TV', 'Movies', 'Sports', 'Cards', 'Other']. each do |c| -%>
-      <%= content_tag(:option, c) %>
-    <% end %>
-  <% end %>
-  </br>
-  </br>
-  <div id = "new_rule">
-  <%= g.fields_for :rules do |builder| %>
-    <div class="adding_rule">
-        <%= builder.select(:drink) do %>
-          <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
-            <%= content_tag(:option, c) %>
-          <% end %>
+    <% if @game.errors.any? %>
+        <% @game.errors.full_messages.each do |msg| %>
+          <p><%= msg %></p>
         <% end %>
-        <%= builder.text_field :rules, :placeholder => "Rules" %></br>
-        <%= builder.hidden_field :_destroy %>
-        <%= link_to "remove", "#", class: "remove_fields" %>
-    </div>
-  <% end %>
-  <%= g.submit :submit %>
-  
-</div>
-<% end %>
+      <% end %>
+      <div class="game_des">
+      <%= g.label name="Title" %>
+      <%= g.text_field :title, :placeholder => "Title" %> </br>
+      <%= g.label name="Description" %>
+      <%= g.text_field :description, :placeholder => "Description" %> </br>
+      <%= g.select(:category) do %>
+        <% ['TV', 'Movies', 'Sports', 'Cards', 'Other']. each do |c| -%>
+          <%= content_tag(:option, c) %>
+        <% end %>
+      <% end %>
+      </div>
+      </br>
+      </br>
+      <div id = "new_rule">
+      <%= g.fields_for :rules do |builder| %>
+        <div class="adding_rule">
+            <%= builder.select(:drink) do %>
+              <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
+                <%= content_tag(:option, c) %>
+              <% end %>
+            <% end %>
+            <%= builder.text_field :rules, :placeholder => "Rules" %>
+            <%= builder.hidden_field :_destroy %>
+            <%= link_to "X", "#", class: "remove_fields" %>
+        </div>
+      <% end %>
+   
+      <%= g.submit :submit %>
+      <div id="add_rule">Add Rule</div> 
 
-<button id="add-rule">Add Rule</button>
+    </div>
+
+    <% end %>
+
+ 
+  </div>
+</body>

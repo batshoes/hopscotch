@@ -4,8 +4,12 @@
 
 
 @import url(http://fonts.googleapis.com/css?family=Arvo:400,700);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans);
 
- body { 
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+ #landing { 
   background: url("beer.gif") no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
@@ -20,23 +24,51 @@
 }
 nav {
   color: white;
+  font-family: 'Josefin Sans', sans-serif;
+  position: absolute;
+  right: 20px;
+
 }
-a {
-  color: white;
+nav a {
   text-decoration: none;
+  color:white;
+  transition: 0.5s ease;
+  text-decoration: none; 
+  display: inline-block;
+  padding: 20px;
+
 }
-#title {
+
+
+nav a:after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid white;
+    width: 0;
+    transition: 0.5s ease;
+}
+
+nav a:hover:after { 
+  width: 100%; 
+}
+
+
+#welcome {
   color: white;
   text-align: center;
   font-family: 'Arvo', serif;
 }
-h2 {
+#welcome h2 {
   font-size: 70px;
+  margin-bottom: 20px;
+  margin-top: 150px;
+
 }
-h1 {
+#welcome h1 {
   font-size: 150px;
+  margin-top: 0px;
 }
-span {
+#welcome span {
   color: gold;
 }
 /* Main styles */
@@ -74,12 +106,12 @@ span {
   // white-space: nowrap;
   // text-align: center;
   // text-transform: uppercase;
-  font: bold 26vmax/.8 Open Sans, Impact;
+  // font: bold 26vmax/.8 Open Sans, Impact;
   -webkit-transform: translateX(-50%) translateY(-50%);
   -ms-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
 }
-h3 {
+#welcome h3 {
   font-size: 25px;
   // display: inline-block;
   text-align: center;

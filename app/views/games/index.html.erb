@@ -1,15 +1,22 @@
-<% @games.each do |game| %>
-  <h2><%= game.title %></h2>
-  <h4>Description:</h4>
-  <h3><%= game.description %></h3>
-    <% game.rules.each do |rule| %>
+<div class="games_index_back">
+  
+    <% @games.each do |game| %>
+    <div class="all_games">
+      <h2><%= game.title %></h2>
+      <h3><%= game.description %></h3>
+        <% game.rules.each do |rule| %>
 
-      <span><%= rule.rules %></span>
-      <span> - </span>
-      <span><%= rule.drink %></span>
-      <br>
-    <% end %> 
-    <%= link_to "Delete", game_path(game.id), method: :delete %> 
-    <%= link_to 'Edit', edit_game_path(game.id) %> 
-  <br><br>
-<% end %>
+          <span><%= rule.rules %></span>
+          <span> - </span>
+          <span><%= rule.drink %></span>
+          <br>
+    <% end %>
+    
+        <%= link_to "Delete", game_path(game.id), method: :delete %> 
+        <%= link_to 'Edit', edit_game_path(game.id) %> 
+
+      <br><br>
+      </div>
+    <% end %>
+  
+</div>

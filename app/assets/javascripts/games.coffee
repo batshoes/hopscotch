@@ -26,12 +26,11 @@ addRule = ->
 
 $(document).on 'ready page:load', ->
 
-  $('#add-rule').on('click', addRule)
+  $('#add_rule').on('click', addRule)
 
   $('form').on 'click', '.remove_fields', (event) ->
 
     $(this).parent().remove()
-    event.preventDefault()
     event.preventDefault()
 
   

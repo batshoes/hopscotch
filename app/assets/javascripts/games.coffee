@@ -7,20 +7,19 @@ current_index = 1
 addRule = ->
   current_index += 1
   html = """
-    <div class="adding_rule">
-        <label for="game_rules_attributes_0_Drink">Drink</label>
-        <select name="game[rules_attributes][0][drink]" id="game_rules_attributes_0_drink">
-            <option>Full Beer</option>
-            <option>Half Beer</option>
-            <option>Sip O'beer</option>
-            <option>SHOTZ</option>
-        </select>          
-        <br>
-        <label for="game_rules_attributes_0_Rules">Rules</label>
-        <input type="text" name="game[rules_attributes][0][rules]" id="game_rules_attributes_0_rules">
-        <input type="hidden" value="false" name="game[rules_attributes][0][_destroy]" id="game_rules_attributes_0__destroy">
-        <a class="remove_fields" href="#">Remove</a>
-    </div>
+      <div class="adding_rule">
+            <label for="game_rules_attributes_0_Rules">Rules</label>
+            <input type="text" name="game[rules_attributes][0][rules]" id="game_rules_attributes_0_rules">
+            <input type="hidden" value="false" name="game[rules_attributes][0][_destroy]" id="game_rules_attributes_0__destroy">
+            <a class="remove_fields" href="#">Remove</a>
+            <label for="game_rules_attributes_0_Drink">Drink</label>
+            <select name="game[rules_attributes][0][drink]" id="game_rules_attributes_0_drink">
+                <option>Full Beer</option>
+                <option>Half Beer</option>
+                <option>Sip O'beer</option>
+                <option>SHOTZ</option>
+            </select>            
+        </div>
   """
   $("#add_rule").before(html)
   
@@ -40,5 +39,4 @@ $(document).on 'ready page:load', ->
 # $(document).on('page:load', ready)
 
 # $(document).on 'click', '#add-rule', ready
-
 

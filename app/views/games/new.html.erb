@@ -24,17 +24,18 @@
       <div id = "new_rule">
       <%= g.fields_for :rules do |builder| %>
         <div class="adding_rule">
+            <%= builder.label name="Rules" %>
+            <%= builder.text_field :rules%>
+            <%= builder.hidden_field :_destroy %>
+            <%= link_to "Remove", "#", class: "remove_fields" %>
+          
             <%= builder.label name="Drink" %>
             <%= builder.select(:drink) do %>
               <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
                 <%= content_tag(:option, c) %>
               <% end %>
             <% end %>
-          </br>
-            <%= builder.label name="Rules" %>
-            <%= builder.text_field :rules%>
-            <%= builder.hidden_field :_destroy %>
-            <%= link_to "Remove", "#", class: "remove_fields" %>
+            
         </div>
       <% end %>
    

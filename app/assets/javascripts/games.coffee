@@ -27,9 +27,8 @@ addRule = ->
 
 $(document).on 'ready page:load', ->
 
-  $('#add_rule').on('click', addRule)
+  console.log($('#add-rule').on('click', addRule))
 
   $('form').on 'click', '.remove_fields', (event) ->
-
     $(this).parent().remove()
     event.preventDefault()

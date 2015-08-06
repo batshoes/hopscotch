@@ -1,7 +1,11 @@
 
 class GamesController < ApplicationController
   def index
-    @games = Game.all
+    if params[:user_id].present?
+      @games = User.find(params[:user_id]).games
+    else
+      @games = Game.all
+    end
   end
 
   def new 
@@ -10,6 +14,7 @@ class GamesController < ApplicationController
   end 
 
   def show
+    @game = Game.find params[:id]
     @games = Game.where user_id: params[:id]
   end
 

@@ -1,14 +1,8 @@
 <% @games.each do |game| %>
-  <h2><%= game.title %></h2>
+  <h2><%= link_to game.title, game_path(game.id) %></h2>
   <h4>Description:</h4>
   <h3><%= game.description %></h3>
-    <% game.rules.each do |rule| %>
-
-      <span><%= rule.rules %></span>
-      <span> - </span>
-      <span><%= rule.drink %></span>
-      <br>
-    <% end %> 
+    
     <% if current_user.id == game.user_id  %>
       <%= link_to "Delete", game_path(game.id), method: :delete %> 
       <%= link_to 'Edit', edit_game_path(game.id) %> 

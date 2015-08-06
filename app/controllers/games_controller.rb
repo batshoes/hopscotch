@@ -13,7 +13,6 @@ class GamesController < ApplicationController
     @games = Game.where user_id: params[:id]
   end
 
-
   def create
     @game = Game.new(game_params)
     @game.user_id = current_user.id
@@ -39,7 +38,8 @@ class GamesController < ApplicationController
   def update
     @game = Game.find params[:id]
     GameUpdater.new(@game).update(game_params)
-    redirect_to root_path
+
+    redirect_to games_path(@game.id)
   end
 
 

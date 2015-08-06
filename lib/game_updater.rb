@@ -25,7 +25,6 @@ class GameUpdater
     @game.title = game_params[:title]
     @game.description = game_params[:description]
     @game.save
-    binding.pry
     game
   end
 

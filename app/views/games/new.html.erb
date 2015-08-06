@@ -11,9 +11,9 @@
       <% end %>
       <div class="game_des">
       <%= g.label name="Title" %>
-      <%= g.text_field :title, :placeholder => "Title" %> </br>
+      <%= g.text_field :title %> </br>
       <%= g.label name="Description" %>
-      <%= g.text_field :description, :placeholder => "Description" %> </br>
+      <%= g.text_field :description %> </br>
       <%= g.label name="Category" %>
       <%= g.select(:category) do %>
         <% ['TV', 'Movies', 'Sports', 'Cards', 'Other']. each do |c| -%>
@@ -24,20 +24,24 @@
       <div id = "new_rule">
       <%= g.fields_for :rules do |builder| %>
         <div class="adding_rule">
+            <%= builder.label name="Drink" %>
             <%= builder.select(:drink) do %>
               <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
                 <%= content_tag(:option, c) %>
               <% end %>
             <% end %>
-            <%= builder.text_field :rules, :placeholder => "Rules" %>
+          </br>
+            <%= builder.label name="Rules" %>
+            <%= builder.text_field :rules%>
             <%= builder.hidden_field :_destroy %>
-            <%= link_to "X", "#", class: "remove_fields" %>
+            <%= link_to "Remove", "#", class: "remove_fields" %>
         </div>
       <% end %>
    
-      
-      <div id="add_rule">Add Rule</div> 
-      <%= g.submit :submit %>
+      <div id="buttons">
+        <div id="add_rule">Add Rule</div> 
+        <%= g.submit :submit %>
+      </div>
     </div>
 
     <% end %>

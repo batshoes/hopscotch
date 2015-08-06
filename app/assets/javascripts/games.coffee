@@ -8,17 +8,18 @@ addRule = ->
   current_index += 1
   html = """
     <div class="adding_rule">
-      <select name="game[rules_attributes][#{current_index}][drink]" id="game_rules_attributes_#{current_index}_drink">
-          <option>Full Beer</option>
-          <option>Half Beer</option>
-          <option>Sip O'beer</option>
-          <option>SHOTZ</option>
-      </select>      
-      <input placeholder="Rules" type="text" name="game[rules_attributes][#{current_index}][rules]" id="game_rules_attributes_#{current_index}_rules">
-      
-      <input type="hidden" value="false" name="game[rules_attributes][#{current_index}][_destroy]" id="game_rules_attributes_#{current_index}__destroy">
-      <a class="remove_fields" href="#">X</a>
-      </br>
+        <label for="game_rules_attributes_0_Drink">Drink</label>
+        <select name="game[rules_attributes][0][drink]" id="game_rules_attributes_0_drink">
+            <option>Full Beer</option>
+            <option>Half Beer</option>
+            <option>Sip O'beer</option>
+            <option>SHOTZ</option>
+        </select>          
+        <br>
+        <label for="game_rules_attributes_0_Rules">Rules</label>
+        <input type="text" name="game[rules_attributes][0][rules]" id="game_rules_attributes_0_rules">
+        <input type="hidden" value="false" name="game[rules_attributes][0][_destroy]" id="game_rules_attributes_0__destroy">
+        <a class="remove_fields" href="#">Remove</a>
     </div>
   """
   $("#add_rule").before(html)
@@ -41,3 +42,5 @@ $(document).on 'ready page:load', ->
 
 # $(document).on 'click', '#add-rule', ready
 
+
+   

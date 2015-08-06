@@ -24,7 +24,7 @@
       <div id = "new_rule">
       <%= g.fields_for :rules do |builder| %>
         <div class="adding_rule">
-            <%= builder.label name="Rules" %>
+            <%= builder.label name="Rule" %>
             <%= builder.text_field :rules%>
             <%= builder.hidden_field :_destroy %>
             <%= link_to "Remove", "#", class: "remove_fields" %>

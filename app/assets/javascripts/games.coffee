@@ -5,10 +5,10 @@
 current_index = 1
 
 addRule = ->
-  current_index += 1
+  
   html = """
     <div class="adding_rule">
-        <label for="game_rules_attributes_0_Drink">Drink</label>
+        <label for="game_rules_attributes_#{current_index}_Drink">Drink</label>
         <select name="game[rules_attributes][0][drink]" id="game_rules_attributes_0_drink">
             <option>Full Beer</option>
             <option>Half Beer</option>
@@ -16,12 +16,13 @@ addRule = ->
             <option>SHOTZ</option>
         </select>          
         <br>
-        <label for="game_rules_attributes_0_Rules">Rules</label>
-        <input type="text" name="game[rules_attributes][0][rules]" id="game_rules_attributes_0_rules">
-        <input type="hidden" value="false" name="game[rules_attributes][0][_destroy]" id="game_rules_attributes_0__destroy">
+        <label for="game_rules_attributes_#{current_index}_Rules">Rules</label>
+        <input type="text" name="game[rules_attributes][#{current_index}][rules]" id="game_rules_attributes_#{current_index}_rules">
+        <input type="hidden" value="false" name="game[rules_attributes][#{current_index}][_destroy]" id="game_rules_attributes_#{current_index}__destroy">
         <a class="remove_fields" href="#">Remove</a>
     </div>
   """
+  current_index += 1
   $("#add_rule").before(html)
   
 

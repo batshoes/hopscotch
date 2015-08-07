@@ -1,11 +1,19 @@
 
-  <h2><%= link_to game.title, game_path(game.id) %></h2>
-  <h4>Description:</h4>
-  <h3><%= game.description %></h3>
-  <p><%= game.category %></p>
- 
-    <% if current_user.id == game.user_id  %>
-      <%= link_to "Delete", game_path(game.id), method: :delete %> 
-      <%= link_to 'Edit', edit_game_path(game.id) %> 
+  <h2><%= link_to game_path(game.id) do %></h2>
+  <div class = "index_link">
+    <h2 class="inline"><%= game.title %></h2>
+    <hr id="hr">
+    <h4 class="inline">Description:</h4>
+    <h3 class="inline"><%= game.description %></h3>
+    <br>
+    <h4 class="inline">Category:</h4>
+    <p class="inline"><%= game.category %></p>
+   
+      <% if current_user.id == game.user_id  %>
+        <%= link_to "Delete", game_path(game.id), method: :delete %> 
+        <%= link_to 'Edit', edit_game_path(game.id) %> 
 
-      <% end %>
+        <% end %>
+  </div>
+  <% end %>
+

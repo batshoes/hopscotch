@@ -84,7 +84,7 @@ html, body {
   border-bottom: 2px dotted black;
   font-size: 14px;
 }
-.new_gamez input[type="submit"]{
+input[type="submit"]{
   background-color: grey;
   width: 70px;
   border-radius: 5px;
@@ -100,7 +100,7 @@ html, body {
   font-weight: bold;
 }
 
-.new_gamez input[type="submit"]:hover {
+input[type="submit"]:hover {
   background-color: #ccc;
   cursor: pointer;
 }
@@ -244,28 +244,58 @@ body {
   width: 40px;
   margin-top: 0;
 }
-.comments input[type="submit"]{
-  background-color: grey;
-  width: 70px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 0 auto;
-  padding: 3px;
-  display: inline;
-  margin-top: 10px;
-  outline: none;
-  border: none;
-  font-size: 25px;
-  font-family:'Amatic SC', Helvetica, Sans-serif;
-  font-weight: bold;
-}
-.comments input[type="submit"]:hover {
-  background-color: #ccc;
-  cursor: pointer;
-}
+
 .comments textarea {
   border: 3px solid #cccccc;
   border-radius: 4px;
 }
+.games_index {
+  text-align: center;
+  margin-top: 80px;
+}
+.games_index select {
+  border: thin solid white;
+  outline: none;
+  font-family:'Amatic SC', Helvetica, Sans-serif;
+  background-color: transparent;
+  left: 600px;
+  position: relative;
+  font-weight: bold;
+  font-size: 17px;
+  color: white;
+  position: absolute;
+  top: 55px;
+}
+.index_link {
+  color: black;
+  
+  border: thin solid transparent;
+  width: 200px;
+  margin: 0 auto;
+  padding: 10px;
+}
+.index_link a{
+  text-decoration: none;
+  color: black;
+}
 
-
+.index_link:hover{
+  border: thin solid black;
+}
+.games_index input[type="submit"]{
+  left: 670px;
+  top: 43px;
+  position: absolute;
+  padding: 0px;
+}
+.inline {
+  display: inline;
+}
+.games_index hr {
+  width: 100px;
+  border: thin solid black;
+  margin-top: 0px;
+}
+.games_index h2 {
+  margin-bottom: 5px;
+}

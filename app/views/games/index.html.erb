@@ -4,9 +4,9 @@
     <%= select_tag "answer", options_for_select(['TV', 'Movies', 'Sports', 'Cards', 'Other', 'All'], "All") %>
     <%= submit_tag :select  %>
   <% end %>
+<% count = 0 %>
 
-
-  <% if @answer == "All" || @answer.nil?%>
+  <% if @answer == "All" || @answer.nil? %>
     <% @games.each do |game| %>
         <%= render 'game', :game => game %>
     <% end %>
@@ -19,6 +19,4 @@
  
   <% end %>
 
-
-  
 </div>

@@ -33,7 +33,7 @@ class UsersController < ApplicationController
     @user.destroy!
     session.clear
     flash[:notice] = "Bye."
-    redirect_to users_path
+    redirect_to root_path
   end
 
   

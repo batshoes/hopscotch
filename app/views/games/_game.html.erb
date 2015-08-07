@@ -3,7 +3,9 @@
   <h4>Description:</h4>
   <h3><%= game.description %></h3>
   <p><%= game.category %></p>
+ 
     <% if current_user.id == game.user_id  %>
       <%= link_to "Delete", game_path(game.id), method: :delete %> 
       <%= link_to 'Edit', edit_game_path(game.id) %> 
+
       <% end %>

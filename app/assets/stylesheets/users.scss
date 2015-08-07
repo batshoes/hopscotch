@@ -40,15 +40,43 @@
   // position: absolute;
   left: 50%;
   right: 50%;
+}
 
+#error_explanation {
+  font-size: 15px;
+  position: absolute;
+  top: 42px;
+  left: 109px;
 
+}
+#error_explanation h2{
+  display: none;
+}
+#error_explanation ul {
+  margin-top: 0px;
+  list-style-type: none;
+  padding-top: 35px;
+}
+.field_with_errors {
+  display: inline;
+}
+.flash {
+  top: 80px;
+  position: absolute;
+  left: 100px;
+  margin-bottom: 10px;
 }
 
 .new_user {
   text-align: center;
-  top: 40%;
+  top: 30%;
   transform: translateY(-50%);
   position: relative
+}
+#new_user2 {
+  text-align: center;
+  top: 50%;
+  padding-top: 109px;
 }
 
 .field {
@@ -81,7 +109,6 @@ transform: translateY(20%);
 #rendered2 > .links {
   margin: 50px;
 }
-
 
 
 

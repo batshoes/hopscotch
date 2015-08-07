@@ -2,7 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-current_index = 1
+
 
 addRule = ->
   
@@ -27,6 +27,8 @@ addRule = ->
   
 
 $(document).on 'ready page:load', ->
+  window.current_index = $('.adding_rule').length
+  console.log current_index
 
   $('#add_rule').on('click', addRule)
 

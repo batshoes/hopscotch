@@ -1,9 +1,13 @@
 
 Rails.application.routes.draw do
   resources :games 
-  
+
   devise_for :users
-  
+
+    resources :games do
+      resources :rules
+    end
+
   resources :users do
     resources :games
   end

@@ -34,7 +34,7 @@ class GamesController < ApplicationController
   def destroy
     @game = Game.find params[:id]
     @game.destroy
-    redirect_to games_path
+    redirect_to user_games_path(current_user)
   end
 
   def edit

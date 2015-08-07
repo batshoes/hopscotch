@@ -44,4 +44,3 @@ $(document).on 'ready page:load', ->
 
 # $(document).on 'click', '#add-rule', ready
 
-

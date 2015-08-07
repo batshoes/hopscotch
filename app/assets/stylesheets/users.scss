@@ -3,6 +3,116 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .login {
-  background: url("login.jpg") no-repeat center center;
+  background: url("barkeep.jpg") no-repeat center center;
   background-size: cover;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  color: white;
 }
+.login h2 {
+  top: 50px;
+  position: relative;
+  font-size: 40px;
+  margin: 20px auto;
+}
+
+#circle {
+  width: 360px;
+  height: 360px;
+  background: #3F3737;
+  -moz-border-radius: 240px;
+  -webkit-border-radius: 240px;
+  border-radius: 240px;
+  margin: 0 auto;
+  position: relative;
+  
+}
+
+#circle2 {
+  width: 400px;
+  height: 400px;
+  background: #993333;
+  -moz-border-radius: 300px;
+  -webkit-border-radius: 300px;
+  border-radius: 300px;
+  // position: absolute;
+  left: 50%;
+  right: 50%;
+}
+
+#error_explanation {
+  font-size: 15px;
+  position: absolute;
+  top: 42px;
+  left: 109px;
+
+}
+#error_explanation h2{
+  display: none;
+}
+#error_explanation ul {
+  margin-top: 0px;
+  list-style-type: none;
+  padding-top: 35px;
+}
+.field_with_errors {
+  display: inline;
+}
+.flash {
+  top: 80px;
+  position: absolute;
+  left: 100px;
+  margin-bottom: 10px;
+}
+
+.new_user {
+  text-align: center;
+  top: 30%;
+  transform: translateY(-50%);
+  position: relative
+}
+#new_user2 {
+  text-align: center;
+  top: 50%;
+  padding-top: 109px;
+}
+
+.field {
+  padding: 5px;
+}
+#circles {
+ -webkit-box-align:center;
+-webkit-box-pack:center;
+display:-webkit-box;
+transform: translateY(20%);
+}
+
+#rendered > .links a {
+  color: white;
+  text-decoration: none;
+}
+#rendered > .links a:hover {
+  text-decoration: underline;
+}
+#rendered > .links {
+  margin: 100px;
+}
+#rendered2 > .links a {
+  color: white;
+  text-decoration: none;
+}
+#rendered2 > .links a:hover {
+  text-decoration: underline;
+}
+#rendered2 > .links {
+  margin: 50px;
+}
+
+
+
+
+
+
+

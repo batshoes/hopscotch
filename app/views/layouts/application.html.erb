@@ -8,18 +8,6 @@
 </head>
 <body>
 
-<% if flash[:notice] or flash[:alert] %>
-  <% if flash[:notice] %>
-    <p class='flash notice'>
-      <%= flash[:notice] %>
-    </p>
-  <% else %>
-    <p class='flash alert'>
-      <%= flash[:alert] %>
-    </p>
-  <% end %>
-<% end %>
-
 <%= yield %>
 </body>
 </html>

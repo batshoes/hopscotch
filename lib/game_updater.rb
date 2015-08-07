@@ -33,6 +33,7 @@ class GameUpdater
   def delete_removed_rules
     game_rule_ids = game.rules.pluck :id
     puts game_params.inspect
+    binding.pry
     submitted_rule_ids = game_params[:rules_attributes].map do |_, r|
       r[:id].to_i
     end.compact

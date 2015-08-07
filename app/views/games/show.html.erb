@@ -1,38 +1,54 @@
-<div> 
-  <%= (@game.title).titleize %>
-  <%= @game.category %>
-  <%= simple_format h(@game.description) %>
-  created by <%= @game.user.username %>
-  <br>
-  <% @game.rules.each do |rule| %>
-    <span><%= rule.rules %></span>
-    <span> - </span>
-    <span><%= rule.drink %></span>
-    <br>
-  <% end %> 
-  <% if current_user.id == @game.user_id  %>
-      <%= link_to "Delete", game_path(@game.id), method: :delete %> 
-      <%= link_to 'Edit', edit_game_path(@game.id) %> 
-  <% end %>
-</div>
-
-<div>
-  <h2>Comments</h2>
-    <% @game.comments.order(id: :desc).each do |comment| %>
-      <%= simple_format h(comment.body) %>
-       Posted by <%= link_to comment.user.username, user_path(comment.user.id) %>
-       <br>
-       at <%= comment.created_at.to_s(:short) %>
+<div class="games_index_back">
+  <%= render 'shared/nav' %>
+  <div class="spec_show">
+  <div class="clear"></div> 
+    <h2><%= (@game.title).titleize %></h2>
+    <hr>
+     <h4>created by <%= @game.user.username %></h4>
+    <h3>Catagory - </h3>
+    <h3><span><%= @game.category %></span></h3>
+  </br>
+    <h3>Description - </h3>
+    <h3><span><%= @game.description %></span></h3>
+  </br>
+    <h2 id="rules_name">Rules: </h2>
+    <hr>
+    <% @game.rules.each do |rule| %>
+      <span><%= rule.rules %></span>
+      <span> - </span>
+      <span><%= rule.drink %></span>
+      <br>
+    <% end %> 
+    <% if current_user.id == @game.user_id  %>
+        <%= link_to "Delete", game_path(@game.id), method: :delete %> 
+        <%= link_to 'Edit', edit_game_path(@game.id) %> 
     <% end %>
-</div>
+  </div>
+<div class="comments">
+  <div>
+    
+    <h2 id="comments_name">Comments</h2>
+      <% @game.comments.order(id: :desc).each do |comment| %>
 
-<div>
-  <h2>Leave a Comment</h2>
+        <%= simple_format h(comment.body) %>
+        <hr>
+         Posted by <%= link_to comment.user.username, user_path(comment.user.id) %>
+         <br>
+         at <%= comment.created_at.to_s(:short) %>
+      <% end %>
+  </div>
 
-  <%= form_for Comment.new do |f| %>
-    <%= f.text_area :body, id: 'comment_form' %>
-    <%= f.hidden_field :game_id, value: @game.id %>
-    <%= f.submit :submit %>
-  <% end %>
+  <div>
+    <h2>Leave a Comment</h2>
 
+    <%= form_for Comment.new do |f| %>
+      <%= f.text_area :body, id: 'comment_form' %>
+      <%= f.hidden_field :game_id, value: @game.id %>
+    </br>
+      <%= f.submit :submit %>
+    <% end %>
+  </div>
+    <div class="little_black_box"></div>
+
+  </div>
 </div>

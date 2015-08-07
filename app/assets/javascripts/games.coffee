@@ -9,7 +9,7 @@ addRule = ->
   html = """
     <div class="adding_rule">
         <label for="game_rules_attributes_#{current_index}_Drink">Drink</label>
-        <select name="game[rules_attributes][0][drink]" id="game_rules_attributes_0_drink">
+        <select name="game[rules_attributes][#{current_index}][drink]" id="game_rules_attributes_#{current_index}_drink">
             <option>Full Beer</option>
             <option>Half Beer</option>
             <option>Sip O'beer</option>

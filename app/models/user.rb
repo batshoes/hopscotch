@@ -5,8 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable,:omniauthable, omniauth_providers: [:github]
 
   def self.find_for_github_oauth(auth)
-
-    where(auth.slice(:provider, :uid)).first_or_create do |user|
+    where(auth.slice(:provider, :uid, :email)).first_or_create do |user|
+      binding.pry
       user.provider = auth.provider
       user.uid = auth.uid
       user.email = auth.info.email

@@ -28,6 +28,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'pry-rails'
 gem 'devise'
+gem 'omniauth-github'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

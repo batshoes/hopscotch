@@ -24,15 +24,16 @@
               <%= content_tag(:option, c) %>
             <% end %>
           <% end %>
-          <%= builder.text_field :rules, :placeholder => "Rules" %></br>
-          <%= builder.hidden_field :_destroy %>
-          <%= link_to "remove", edit_game_path(params[:id]), method: :delete %>
-      </div>
-    <% end %>
-    <%= g.submit :submit %>
-    
-  </div>
-  <% end %>
 
-  <button id="add_rule">Add Rule</button>
+        <% end %>
+        <%= builder.text_field :rules, :placeholder => "Rules" %></br>
+        <%= builder.hidden_field :_destroy %>
+        <%= link_to "remove", game_rule_path(params[:id],builder.object.id), method: :delete %>
+    </div>
+  <% end %>
+  <button type="button" id="add_rule">Add Rule</button>
+  <%= g.submit :submit %>
+  
 </div>
+<% end %>
+

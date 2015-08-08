@@ -193,6 +193,8 @@ input[type="submit"]:hover {
   font-family:'Amatic SC', Helvetica, Sans-serif;
   width: 300px;
   margin: 0 auto;
+  margin-top: 27px;
+
 }
 .spec_show h2 {
   font-size: 50px;
@@ -208,6 +210,24 @@ input[type="submit"]:hover {
 }
 .spec_show span {
   font-size: 30px;
+}
+.spec_show a {
+  background-color: grey;
+  width: 70px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 3px;
+  margin-top: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  font-family:'Amatic SC', Helvetica, Sans-serif;
+
+}
+.spec_show a:hover{
+  background-color: #ccc;
+  cursor: pointer;
 }
 
 body {
@@ -258,7 +278,7 @@ body {
   outline: none;
   font-family:'Amatic SC', Helvetica, Sans-serif;
   background-color: transparent;
-  left: 600px;
+  left: 520px;
   position: relative;
   font-weight: bold;
   font-size: 17px;
@@ -273,6 +293,7 @@ body {
   width: 200px;
   margin: 0 auto;
   padding: 10px;
+  margin-bottom: 30px;
 }
 .index_link a{
   text-decoration: none;
@@ -283,7 +304,7 @@ body {
   border: thin solid black;
 }
 .games_index input[type="submit"]{
-  left: 670px;
+  left: 610px;
   top: 43px;
   position: absolute;
   padding: 0px;
@@ -298,4 +319,22 @@ body {
 }
 .games_index h2 {
   margin-bottom: 5px;
+}
+.delete_button {
+  background-color: transparent;
+  width: 70px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 3px;
+  margin-top: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  font-family:'Amatic SC', Helvetica, Sans-serif;
+  border: thin solid transparent;
+}
+.delete_button:hover {
+  border: thin solid black;
+  cursor: pointer;
 }

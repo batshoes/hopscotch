@@ -8,12 +8,13 @@
     <br>
     <h4 class="inline">Category:</h4>
     <p class="inline"><%= game.category %></p>
-   
+   <% end %>
       <% if current_user.id == game.user_id  %>
-        <%= link_to "Delete", game_path(game.id), method: :delete %> 
-        <%= link_to 'Edit', edit_game_path(game.id) %> 
+    </br></br>
+        <%= link_to "Delete", game_path(game.id), method: :delete, :class => "delete_button" %> 
+        <%= link_to 'Edit', edit_game_path(game.id), :class => "delete_button" %> 
 
         <% end %>
   </div>
-  <% end %>
+  
 

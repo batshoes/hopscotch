@@ -13,7 +13,7 @@
       <%= g.label name="Title" %>
       <%= g.text_field :title %> </br>
       <%= g.label name="Description" %>
-      <%= g.text_field :description %> </br>
+      <%= g.text_field :description, :maxlength => "25" %> </br>
       <%= g.label name="Category" %>
       <%= g.select(:category) do %>
         <% ['TV', 'Movies', 'Sports', 'Cards', 'Other']. each do |c| -%>

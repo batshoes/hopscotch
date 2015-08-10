@@ -23,9 +23,14 @@
             
             </br>
             </br>
-            <div id = "new_rule">
+            
             <%= g.fields_for :rules do |builder| %>
-              <div class="adding_rule">
+            <div class = "new_rule">
+                <%= builder.label name="Rule" %>
+                <%= builder.text_field :rules, :placeholder => "Rules" %>
+                <%= builder.hidden_field :_destroy %>
+                <%= link_to "remove", game_rule_path(params[:id],builder.object.id), method: :delete, :class => "remove_fields" %>
+                  <div class="adding_rule">
                 <%= builder.label name="Drink" %>
                   <%= builder.select(:drink) do %>
                     <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
@@ -34,10 +39,6 @@
                   <% end %>
 
                </div>
-                <%= builder.label name="Rule" %>
-                <%= builder.text_field :rules, :placeholder => "Rules" %>
-                <%= builder.hidden_field :_destroy %>
-                <%= link_to "remove", game_rule_path(params[:id],builder.object.id), method: :delete, :class => "delete_button1" %>
                 </div>
               <% end %>
               <button type="button" id="add_rule">Add Rule</button>

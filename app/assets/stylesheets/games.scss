@@ -310,7 +310,7 @@ body {
   padding: 0;
 }
 .games_index input[type="submit"]:hover {
-  border: 1px solid black;
+  border: 1px solid grey;
   background-color: transparent;
   padding: 0;
 }
@@ -334,9 +334,6 @@ body {
   cursor: pointer;
 }
 
-.delete_account:hover {
-  background-color:darkred;
-}
 
 .edit_game {
   position: relative;
@@ -366,7 +363,7 @@ body {
   left: 50%;
   right: 50%;
 }
-.delete_button1 {
+.remove_fields {
   background-color: grey;
   width: 70px;
   border-radius: 5px;
@@ -378,7 +375,7 @@ body {
   font-family:'Amatic SC', Helvetica, Sans-serif;
   border: thin solid transparent;
 }
-.delete_button1:hover {
+.remove_fields:hover {
   background-color: #ccc;
   cursor: pointer;
 }
@@ -415,10 +412,13 @@ body {
 }
 .delete_account {
   @include delete_button;
-  background-color:red;
+  background-color:darkred;
   font-size: 20px;
   position: relative;
   top: 40px;
+}
+.delete_account:hover {
+  background-color: red;
 }
 .circle {
   @include circle;

@@ -1,13 +1,28 @@
+<div class="edit_profile">
+  <div id="body">
+  <%= render 'shared/nav' %>
+    <div class="circles">
+      <div class = "circle5">
+        <div class = "circle">
 
-<%= form_for @user do |f| %>
-  <%= f.text_field :username, placeholder: 'username' %><br>
-  <%= f.text_field :email, placeholder: 'Email' %><br>
-  <%= f.password_field :password, placeholder: 'Password' %><br>
-  <%= f.password_field :password_confirmation, placeholder: 'Confirm password' %><br>
-  <%= f.submit 'Edit' %>
+          <%= form_for @user do |f| %>
+          <h2>Edit Profile</h2>
+            <%= f.label name="Username" %><br>
+            <%= f.text_field :username, placeholder: 'username' %><br>
+            <%= f.label name="Email" %><br>
+            <%= f.text_field :email, placeholder: 'Email' %><br>
+            <%= f.label name="Password" %><br>
+            <%= f.password_field :password, placeholder: 'Password' %><br>
+            <%= f.label name="Confirm Password" %><br>
+            <%= f.password_field :password_confirmation, placeholder: 'Confirm password' %><br>
+            <%= f.submit 'Edit' %>
 
-<% end %>
+          <% end %>
 
+          <%= link_to "Delete Account", user_path(current_user), method: :delete, :class => "delete_account" %>
 
-<%= link_to "Delete Account", user_path(current_user), method: :delete %>
-
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>

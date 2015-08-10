@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'mixins';
+
 .login {
   background: url("barkeep.jpg") no-repeat center center;
   background-size: cover;
@@ -18,28 +20,12 @@
   margin: 20px auto;
 }
 
-#circle {
-  width: 360px;
-  height: 360px;
-  background: #3F3737;
-  -moz-border-radius: 240px;
-  -webkit-border-radius: 240px;
-  border-radius: 240px;
-  margin: 0 auto;
-  position: relative;
-  
+.circle {
+  @include circle; 
 }
 
-#circle2 {
-  width: 400px;
-  height: 400px;
-  background: #993333;
-  -moz-border-radius: 300px;
-  -webkit-border-radius: 300px;
-  border-radius: 300px;
-  // position: absolute;
-  left: 50%;
-  right: 50%;
+.circle2 {
+  @include circle2;
 }
 
 #error_explanation {
@@ -82,7 +68,7 @@
 .field {
   padding: 5px;
 }
-#circles {
+.circles {
  -webkit-box-align:center;
 -webkit-box-pack:center;
 display:-webkit-box;

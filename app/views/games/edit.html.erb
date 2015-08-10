@@ -1,37 +1,52 @@
 <div class="games_index_back">
-  <%= form_for @game do |g| %>
+    <%= render 'shared/nav' %>
+        <%= form_for @game do |g| %>
 
-  <% if @game.errors.any? %>
-      <% @game.errors.full_messages.each do |msg| %>
-        <p><%= msg %></p>
-      <% end %>
-    <% end %>
-
-    <%= g.text_field :title, :placeholder => "Title" %> 
-    <%= g.text_field :description, :placeholder => "Description" %>
-    <%= g.select(:category) do %>
-      <% ['TV', 'Movies', 'Sports', 'Cards', 'Other']. each do |c| -%>
-        <%= content_tag(:option, c) %>
-      <% end %>
-    <% end %>
-    </br>
-    </br>
-    <div id = "new_rule">
-    <%= g.fields_for :rules do |builder| %>
-      <div class="adding_rule">
-          <%= builder.select(:drink) do %>
-            <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
-              <%= content_tag(:option, c) %>
+        <% if @game.errors.any? %>
+            <% @game.errors.full_messages.each do |msg| %>
+              <p><%= msg %></p>
             <% end %>
           <% end %>
-        <%= builder.text_field :rules, :placeholder => "Rules" %></br>
-        <%= builder.hidden_field :_destroy %>
-        <%= link_to "remove", game_rule_path(params[:id],builder.object.id), method: :delete %>
-    </div>
-  <% end %>
-  <button type="button" id="add_rule">Add Rule</button>
-  <%= g.submit :submit %>
-  
-</div>
-<% end %>
+          <div class="game_des">
+            <div class="game_edit1">
+              <h2>Edit Game</h2>
+              <%= g.label name="Title" %>
+              <%= g.text_field :title %> </br>
+              <%= g.label name="Description" %>
+              <%= g.text_field :description, :maxlength => "25" %> </br></br>
+              <%= g.label name="Category" %>
+              <%= g.select(:category) do %>
+                <% ['TV', 'Movies', 'Sports', 'Cards', 'Other']. each do |c| -%>
+              <%= content_tag(:option, c) %>
+              <% end %>
+              <% end %>
+            
+            </br>
+            </br>
+            
+            <%= g.fields_for :rules do |builder| %>
+            <div class = "new_rule">
+                <%= builder.label name="Rule" %>
+                <%= builder.text_field :rules, :placeholder => "Rules" %>
+                <%= builder.hidden_field :_destroy %>
+                <%= link_to "remove", game_rule_path(params[:id],builder.object.id), method: :delete, :class => "remove_fields" %>
+                  <div class="adding_rule">
+                <%= builder.label name="Drink" %>
+                  <%= builder.select(:drink) do %>
+                    <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
+                      <%= content_tag(:option, c) %>
+                    <% end %>
+                  <% end %>
 
+               </div>
+                </div>
+              <% end %>
+              <button type="button" id="add_rule">Add Rule</button>
+              <%= g.submit :submit %>
+              </div>
+      </div>
+
+
+<% end %>
+</div>
+</div>

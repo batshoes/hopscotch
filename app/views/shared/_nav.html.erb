@@ -1,18 +1,20 @@
     <div class="back">
     <nav>
+      <ul id="nav">
       <% if current_user %>
-        Signed in as <%= current_user.username || current_user.email %> | 
-       <%= link_to "Home", root_path  %>
-       <%= link_to "All Games", games_path  %>
-        <%= link_to "My Games", user_games_path(current_user) %>
-        <%= link_to "New Game", new_game_path  %>
+        <li>Signed in as <%= current_user.username || current_user.email %> | </li>
+       <li><%= link_to "Home", root_path  %></li>
+       <li><%= link_to "All Games", games_path  %></li>
+        <li><%= link_to "My Games", user_games_path(current_user) %></li>
+        <li><%= link_to "New Game", new_game_path  %></li>
         
-        <%= link_to "Edit Profile", edit_user_path(current_user) %>
-         <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+        <li><%= link_to "Edit Profile", edit_user_path(current_user) %></li>
+         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
       <% else %>
-        <%= link_to "Home", root_path  %> |
-        <%= link_to "Login", new_user_session_path %> | 
-        <%= link_to "Sign Up", new_user_registration_path %>
+        <li><%= link_to "Home", root_path  %> | </li>
+        <li><%= link_to "Login", new_user_session_path %> | </li>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
       <% end %>
+    </ul>
 </nav>
 </div>

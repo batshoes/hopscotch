@@ -14,3 +14,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+var navbar;
+navbar = function() {
+  $("#nav").addClass("js").before('<div id="menu">&#9776;</div>');
+  $("#menu").click(function(){
+    $("#nav").toggle();
+  });
+  $(window).resize(function(){
+    if(window.innerWidth > 768) {
+      $("#nav").removeAttr("style");
+    }
+  })
+
+};
+
+$(document).ready(navbar);
+$(document).on('page:load', navbar);

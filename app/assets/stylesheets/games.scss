@@ -338,3 +338,36 @@ body {
   border: thin solid black;
   cursor: pointer;
 }
+.games_edit {
+  background: url("drinks.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+}
+.edit_game {
+  position: relative;
+  top: 20px;
+  text-align: center;
+}
+.game_edit1 {
+  text-align: center;
+  color: white;
+}
+.game_edit1 .adding_rule label {
+  margin-left: 100px;
+}
+.game_edit1 input {
+  margin-bottom: 10px;
+}
+#circle3 {
+  width: 400px;
+  height: 400px;
+  background: #1A661A;
+  -moz-border-radius: 300px;
+  -webkit-border-radius: 300px;
+  border-radius: 300px;
+  // position: absolute;
+  left: 50%;
+  right: 50%;
+}
+

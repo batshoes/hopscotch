@@ -362,7 +362,7 @@ body {
 .game_edit1 input {
   // margin-bottom: 10px;
 }
-#circle3 {
+.circle3 {
   width: 400px;
   height: 400px;
   background: #1A661A;
@@ -398,5 +398,11 @@ body {
 .games_edit label{
   font-family:'Amatic SC', Helvetica, Sans-serif;
    font-size: 25px;
+}
+.edit_profile {
+   background: url("bar.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
 }
 

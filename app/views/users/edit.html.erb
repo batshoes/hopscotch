@@ -1,13 +1,14 @@
+<div class="edit_profile">
+  <%= form_for @user do |f| %>
+    <%= f.text_field :username, placeholder: 'username' %><br>
+    <%= f.text_field :email, placeholder: 'Email' %><br>
+    <%= f.password_field :password, placeholder: 'Password' %><br>
+    <%= f.password_field :password_confirmation, placeholder: 'Confirm password' %><br>
+    <%= f.submit 'Edit' %>
 
-<%= form_for @user do |f| %>
-  <%= f.text_field :username, placeholder: 'username' %><br>
-  <%= f.text_field :email, placeholder: 'Email' %><br>
-  <%= f.password_field :password, placeholder: 'Password' %><br>
-  <%= f.password_field :password_confirmation, placeholder: 'Confirm password' %><br>
-  <%= f.submit 'Edit' %>
-
-<% end %>
+  <% end %>
 
 
-<%= link_to "Delete Account", user_path(current_user), method: :delete %>
+  <%= link_to "Delete Account", user_path(current_user), method: :delete %>
 
+</div>

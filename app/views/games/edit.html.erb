@@ -13,9 +13,9 @@
 
           <div class="game_edit1">
             <h2>Edit Game</h2>
-            <%= g.label name="Title" %></br>
+            <%= g.label name="Title" %>
             <%= g.text_field :title %> </br>
-            <%= g.label name="Description" %></br>
+            <%= g.label name="Description" %>
             <%= g.text_field :description, :maxlength => "25" %> </br></br>
             <%= g.label name="Category" %>
             <%= g.select(:category) do %>
@@ -37,9 +37,10 @@
                 <% end %>
 
         </div>
-              <%= builder.text_field :rules, :placeholder => "Rules" %></br>
+              <%= builder.label name="Rule" %>
+              <%= builder.text_field :rules, :placeholder => "Rules" %>
               <%= builder.hidden_field :_destroy %>
-              <%= link_to "remove", game_rule_path(params[:id],builder.object.id), method: :delete %>
+              <%= link_to "remove", game_rule_path(params[:id],builder.object.id), method: :delete, :class => "delete_button1" %>
           </div>
         <% end %>
         <button type="button" id="add_rule">Add Rule</button>

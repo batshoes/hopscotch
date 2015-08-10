@@ -77,7 +77,7 @@ html, body {
     -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
 }
 
-.new_gamez input[type="text"] {
+input[type="text"] {
   background-color: transparent;
   outline: none;
   border: transparent;
@@ -142,7 +142,10 @@ input[type="submit"]:hover {
   padding: 3px;
   display: inline;
   margin-top: 5px;
-
+  border: none;
+  font-size: 25px;
+  font-weight: bold;
+  font-family:'Amatic SC', Helvetica, Sans-serif;
 }
 #add_rule:hover {
   background-color: #ccc;
@@ -357,7 +360,7 @@ body {
   margin-left: 100px;
 }
 .game_edit1 input {
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
 }
 #circle3 {
   width: 400px;
@@ -369,5 +372,31 @@ body {
   // position: absolute;
   left: 50%;
   right: 50%;
+}
+.delete_button1 {
+  background-color: grey;
+  width: 70px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 auto;
+  padding: 3px;
+  margin-top: 20px;
+  text-decoration: none;
+  color: black;
+  font-size: 25px;
+  font-family:'Amatic SC', Helvetica, Sans-serif;
+  border: thin solid transparent;
+}
+.delete_button1:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+.games_edit input[type="text"] {
+  color: white;
+  border-bottom-color: white;
+}
+.games_edit label{
+  font-family:'Amatic SC', Helvetica, Sans-serif;
+   font-size: 25px;
 }
 

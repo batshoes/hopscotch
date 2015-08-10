@@ -30,6 +30,7 @@ class UsersController < ApplicationController
 
   def destroy
     @user = User.find params[:id]
+    DefaultUser.new(@user)
     @user.destroy!
     session.clear
     flash[:notice] = "Bye."

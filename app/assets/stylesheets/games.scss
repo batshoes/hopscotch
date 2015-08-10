@@ -6,6 +6,7 @@
 
 @import url(http://fonts.googleapis.com/css?family=Amatic+SC);
 @import url(http://fonts.googleapis.com/css?family=Lato:100);
+@import 'mixins';
 
 html, body {
   height: 100%;
@@ -324,18 +325,7 @@ body {
   margin-bottom: 5px;
 }
 .delete_button {
-  background-color: transparent;
-  width: 70px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 0 auto;
-  padding: 3px;
-  margin-top: 20px;
-  text-decoration: none;
-  color: black;
-  font-size: 25px;
-  font-family:'Amatic SC', Helvetica, Sans-serif;
-  border: thin solid transparent;
+  @include delete_button;
 }
 .delete_button:hover {
   border: thin solid black;
@@ -406,3 +396,6 @@ body {
     height: 100%;
 }
 
+.circle {
+  @include circle;
+}

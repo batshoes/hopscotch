@@ -1,8 +1,5 @@
-<div class="games_edit">
+<div class="games_index_back">
     <%= render 'shared/nav' %>
-    <div class="circles">
-    <div class = "circle3">
-      <div class = "circle">
         <%= form_for @game do |g| %>
 
         <% if @game.errors.any? %>
@@ -10,47 +7,45 @@
               <p><%= msg %></p>
             <% end %>
           <% end %>
-
-          <div class="game_edit1">
-            <h2>Edit Game</h2>
-            <%= g.label name="Title" %>
-            <%= g.text_field :title %> </br>
-            <%= g.label name="Description" %>
-            <%= g.text_field :description, :maxlength => "25" %> </br></br>
-            <%= g.label name="Category" %>
-            <%= g.select(:category) do %>
-              <% ['TV', 'Movies', 'Sports', 'Cards', 'Other']. each do |c| -%>
-            <%= content_tag(:option, c) %>
-            <% end %>
-            <% end %>
-          
-          </br>
-          </br>
-          <div id = "new_rule">
-          <%= g.fields_for :rules do |builder| %>
-            <div class="adding_rule">
-              <%= builder.label name="Drink" %>
-                <%= builder.select(:drink) do %>
-                  <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
-                    <%= content_tag(:option, c) %>
+          <div class="game_des">
+            <div class="game_edit1">
+              <h2>Edit Game</h2>
+              <%= g.label name="Title" %>
+              <%= g.text_field :title %> </br>
+              <%= g.label name="Description" %>
+              <%= g.text_field :description, :maxlength => "25" %> </br></br>
+              <%= g.label name="Category" %>
+              <%= g.select(:category) do %>
+                <% ['TV', 'Movies', 'Sports', 'Cards', 'Other']. each do |c| -%>
+              <%= content_tag(:option, c) %>
+              <% end %>
+              <% end %>
+            
+            </br>
+            </br>
+            <div id = "new_rule">
+            <%= g.fields_for :rules do |builder| %>
+              <div class="adding_rule">
+                <%= builder.label name="Drink" %>
+                  <%= builder.select(:drink) do %>
+                    <% ['Full Beer', 'Half Beer', 'Sip O\'beer', 'SHOTZ']. each do |c| -%>
+                      <%= content_tag(:option, c) %>
+                    <% end %>
                   <% end %>
-                <% end %>
 
-        </div>
-              <%= builder.label name="Rule" %>
-              <%= builder.text_field :rules, :placeholder => "Rules" %>
-              <%= builder.hidden_field :_destroy %>
-              <%= link_to "remove", game_rule_path(params[:id],builder.object.id), method: :delete, :class => "delete_button1" %>
-          </div>
-        <% end %>
-        <button type="button" id="add_rule">Add Rule</button>
-        <%= g.submit :submit %>
-        
+               </div>
+                <%= builder.label name="Rule" %>
+                <%= builder.text_field :rules, :placeholder => "Rules" %>
+                <%= builder.hidden_field :_destroy %>
+                <%= link_to "remove", game_rule_path(params[:id],builder.object.id), method: :delete, :class => "delete_button1" %>
+                </div>
+              <% end %>
+              <button type="button" id="add_rule">Add Rule</button>
+              <%= g.submit :submit %>
+              </div>
+      </div>
 
 
 <% end %>
-</div>
-</div>
-</div>
 </div>
 </div>

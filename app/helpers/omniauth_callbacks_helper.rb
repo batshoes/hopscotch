@@ -1,0 +1,3 @@
+module OmniauthCallbacksHelper
+  
+end

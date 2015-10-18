@@ -1,8 +1,8 @@
 
   <h1>All Users</h1>
 <% @users.each do |user| %>
-  <div>
-    <p><%= user.username ||    user.email %></p>
+  <div color="white">
+    <p style="color: white"><%= user.username %> |  <%= user.email %></p>
     <p><%= link_to 'Games', user_games_path(user.id) %></p>
     <br>
   </div>

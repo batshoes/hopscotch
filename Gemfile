@@ -30,7 +30,7 @@ gem 'pry-rails'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-linkedin'
-gem 'omniauth-facebook', '1.4.0'
+gem 'omniauth-facebook', '~> 2.0.1'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

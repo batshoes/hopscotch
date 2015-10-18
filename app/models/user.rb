@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   end   
 
   def self.connect_to_facebook(auth, signed_in_resource=nil)
+      binding.pry
       user = User.where(:provider => auth.provider, :uid => auth.uid).first
       if user
         return user

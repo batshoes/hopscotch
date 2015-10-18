@@ -239,7 +239,9 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   require 'omniauth-linkedin'
-  config.omniauth :linkedin, "77x9c91eitt3i2", "8Tx8KLNfYw5nunOy"
+  config.omniauth :linkedin, '77x9c91eitt3i2', '8Tx8KLNfYw5nunOy'
+  require 'omniauth-facebook'
+  config.omniauth :facebook, '1611811912397878', 'ecd936946c7fecf84020116ac762aa28'
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

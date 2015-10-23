@@ -242,7 +242,8 @@ Devise.setup do |config|
   config.omniauth :linkedin, ENV['LINKEDIN_PUBLIC'], ENV['LINKEDIN_SECRET']
   require 'omniauth-facebook'
   config.omniauth :facebook, ENV['FACEBOOK_PUBLIC'], ENV['FACEBOOK_SECRET'], scope: 'email', info_fields: 'email, name'
-
+  require 'omniauth-twitter'
+  config.omniauth :twitter, ENV['TWITTER_PUBLIC'], ENV['TWITTER_SECRET']
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

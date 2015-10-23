@@ -31,6 +31,7 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-linkedin'
 gem 'omniauth-facebook', '~> 2.0.1'
+gem 'omniauth-twitter'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
@@ -43,7 +44,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.0'
   gem 'factory_girl_rails', '~> 4.0'
-
+  #gem 'capybara'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 
